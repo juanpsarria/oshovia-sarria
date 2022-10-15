@@ -1,90 +1,109 @@
-const escondida = 10000;
-const fagnano = 20000;
-const roca = 30000;
-const esmeralda = 40000;
-const parqueNacional = 7000;
-const canalBeagle = 25000;
-const lagunaEsmeralda = 7000;
-let result = 0;
-let charge = 0;
+//INICIO CREACIÓN DE OBJETOS
 
-function multiply (a, b, messageResult){
-    result = a * b;
-    console.log(messageResult + result);
-    return result;
+class Booking {
+    constructor (name, price){
+        this.name = name;
+        this.price = price;
+    }
+    reservation(){
+        const amount = parseInt(prompt("Ingrese el número de días de su reserva."));
+        this.amount = amount;
+        this.finalPrice = this.price * amount;
+        alert("El costo total es $" + this.finalPrice + ".");
+    }
+    payment(){
+        const quantity = parseInt(prompt("Ingrese el número de cuotas de su pago."));
+        this.quantity = quantity
+        this.charge = this.finalPrice / quantity;       
+        alert("Su pago se ha confirmado en " + quantity + " cuotas de $" + this.charge + ".");
+    }
+    show(){
+        console.log(username + " reservó " + this.name + " por " + this.amount + " días. El costo total es $" + this.finalPrice + ", a pagar en " + this.quantity + " cuotas de $" + this.charge + ".");
+    }
 }
 
-function divide (a, b,){
-    charge = a / b;
-    return charge
+class Cottage extends Booking {
+
 }
+
+class Experience extends Booking {
+    reservation(){
+        const amount = parseInt(prompt("Ingrese el número de personas que realizarán la actividad."));
+        this.amount = amount;
+        this.finalPrice = this.price * amount;
+        alert("El costo total es $" + this.finalPrice + ".");
+    }
+    show(){
+        console.log(username + " reservó " + this.name + " para " + this.amount + " personas. El costo total es $" + this.finalPrice + ", a pagar en " + this.quantity + " cuotas de $" + this.charge + ".");
+    }
+}
+
+const cottageEscondida = new Cottage ("Cabaña Escondida", 10000);
+const cottageFagnano = new Cottage ("Cabaña Fagnano", 20000);
+const cottageRoca = new Cottage ("Cabaña Roca", 30000);
+const cottageEsmeralda = new Cottage ("Cabaña Esmeralda", 40000);
+
+const experienceParqueNacional = new Experience ("Recorrido Parque Nacional", 7000);
+const experienceCanalBeagle = new Experience ("Navegación Canal Beagle", 25000);
+const experienceLagunaEsmeralda = new Experience ("Trekking Laguna Esmeralda", 7000);
+
+// FIN CREACIÓN DE OBJETOS
+
+//INICIO INTERACCIÓN CON USUARIO
 
 const username = prompt ("Ingrese su nombre");
 const welcome = "Bienvenido, " + username
 alert(welcome);
 
-const booking = prompt ("¿Qué desea reservar? Ingrese cabaña o experiencia");
-if (booking === "cabaña"){
+const booking = prompt ("¿Qué desea reservar? Ingrese cabaña o experiencia").toLowerCase();
+while (booking === "cabaña"){
     const cottage = prompt ("¿Qué cabaña desea reservar? Escondida, Fagnano, Roca o Esmeralda").toLowerCase();
     switch (cottage) {
         case "escondida":
-            console.log(username + " eligió la cabaña Escondida.")
-            const escondidaBooking = parseInt(prompt("Ingrese el número de días de su estadía. Ej: 1, 5, 10"));
-            console.log("La reserva será por " + escondidaBooking + " días.")
-            multiply (escondida, escondidaBooking, "El total es $");
+            cottageEscondida.reservation();
+            cottageEscondida.payment();
+            cottageEscondida.show();
             break;
         case "fagnano":
-            console.log(username + " eligió la cabaña Fagnano.")
-            const fagnanoBooking = parseInt(prompt("Ingrese el número de días de su estadía. Ej: 1, 5, 10"));
-            console.log("La reserva será por " + fagnanoBooking + " días.")
-            multiply (fagnano, fagnanoBooking, "El total es $");
+            cottageFagnano.reservation();
+            cottageFagnano.payment();
+            cottageFagnano.show();
             break;
         case "roca":
-            console.log(username + " eligió la cabaña Roca.")
-            const rocaBooking = parseInt(prompt("Ingrese el número de días de su estadía. Ej: 1, 5, 10"));
-            console.log("La reserva será por " + rocaBooking + " días.")
-            multiply (roca, rocaBooking, "El total es $");
+            cottageRoca.reservation();
+            cottageRoca.payment();
+            cottageRoca.show();
             break;
         case "esmeralda":
-            console.log(username + " eligió la cabaña Esmeralda.")
-            const esmeraldaBooking = parseInt(prompt("Ingrese el número de días de su estadía. Ej: 1, 5, 10"));
-            console.log("La reserva será por " + esmeraldaBooking + " días.")
-            multiply (esmeralda, esmeraldaBooking, "El total es $");
+            cottageEsmeralda.reservation();
+            cottageEsmeralda.payment();
+            cottageEsmeralda.show();
             break;
         default:
             alert("No es una opción válida.");
     }
-    const payment = parseInt(prompt("Ingrese el número de cuotas."))
-    divide (result, payment)
-    console.log("Paga en " + payment + " cuotas de $" + charge);
-}else if (booking === "experiencia"){
+    break;
+}
+while (booking === "experiencia"){
     const experience = prompt("¿Qué experiencia desea contratar? Laguna Esmeralda, Canal Beagle o Parque Nacional").toLowerCase();
     switch (experience) {
         case "laguna esmeralda":
-            console.log(username + " eligió el trekking a la Laguna Esmeralda.");
-            const participantLaguna = parseInt(prompt("Ingrese el número de personas que participarán en la excursión"));
-            console.log("La excursión es para " + participantLaguna + " personas.")
-            multiply (lagunaEsmeralda, participantLaguna, "El total es $");
+            experienceLagunaEsmeralda.reservation();
+            experienceLagunaEsmeralda.payment();
+            experienceLagunaEsmeralda.show();
             break;
         case "canal beagle":
-            console.log(username + " eligió navegar en el Canal Beagle.");
-            const participantCanal = parseInt(prompt("Ingrese el número de personas que participarán en la excursión"));
-            console.log("La excursión es para " + participantCanal + " personas.")
-            multiply (canalBeagle, participantCanal, "El total es $");
+            experienceCanalBeagle.reservation();
+            experienceCanalBeagle.payment();
+            experienceCanalBeagle.show();
             break;
         case "parque nacional":
-            console.log(username + " eligió recorrer el Parque Nacional.");
-            const participantParque = parseInt(prompt("Ingrese el número de personas que participarán en la excursión"));
-            console.log("La excursión es para " + participantParque + " personas.")
-            multiply (parqueNacional, participantParque, "El total es $");
+            experienceParqueNacional.reservation();
+            experienceParqueNacional.payment();
+            experienceParqueNacional.show();
             break;
         default:
             alert("No es una opción válida.");
     }
-    const payment = parseInt(prompt("Ingrese el número de cuotas."))
-    divide (result, payment)
-    console.log("Paga en " + payment + " cuotas de $" + charge);
-} else {
-    const booking = prompt ("No es una opción válida.");
+    break;
 }
-
