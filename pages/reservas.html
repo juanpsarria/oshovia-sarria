@@ -1,13 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OSHOVIA | RESERVAS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
-    <h1>A desarrollar</h1>
-    <script src="../script.js"></script>
+    <div class="grid-config">
+        <!--INICIO HEADER-->
+        <header class="header-reservas">
+            <!--INICIO NAV-->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="logo">
+                    <a href="../index.html">OSHOVIA <span>cabañas y experiencias</span></a>
+                </div>
+            </nav>
+            <!--FIN NAV-->
+        </header>
+        <!--FIN HEADER-->
+        <main class="main-reservas">
+            <section class="section-reservas">
+                <div class="container-reservas">
+                    <h2>FORMULARIO DE RESERVA</h2>
+                    <div>
+                        <button class="btn-seleccion" id="btn-cabania">Reservar cabaña</button>
+                        <button class="btn-seleccion" id="btn-experiencia">Reservar experiencia</button>
+                    </div>
+                    <form class="reservas-formulario" id="cottage-booking-form">
+                        <div class="seleccion">
+                            <label for="nombre-experiencia">Elija su cabaña</label>
+                            <select name="nombre-experiencia" id="cottage">
+                                    <option value="0"></option>
+                                    <option value="Cabaña Escondida">Cabaña Escondida</option>
+                                    <option value="Cabaña Fagnano">Cabaña Fagnano</option>
+                                    <option value="Cabaña Roca">Cabaña Roca</option>
+                                    <option value="Cabaña Esmeralda">Cabaña Esmeralda</option>
+                            </select>
+                        </div>
+                        <div class="nombre">
+                            <label for="nombre-usuario">Nombre y apellido</label>
+                            <input type="text" name="nombre-usuario" id="guest-name" placeholder="Ingrese su nombre y apellido">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="guest-email" placeholder="Ingrese su email">
+                        </div>
+                        <div class="telefono">
+                            <label for="telefono">Número de teléfono</label>
+                            <input type="tel" name="telefono" id="guest-telephone" placeholder="Ingrese su número de teléfono">
+                        </div>
+                        <div class="adultos">
+                            <label for="adultos">Cantidad de adultos</label>
+                            <input type="number" name="adultos"  id="adults" placeholder="0">
+                        </div>
+                        <div class="menores">
+                            <label for="menores">Cantidad de menores</label>
+                            <input type="number" name="menores" id="children" placeholder="0">
+                        </div>
+                        <div class="ingreso">
+                            <label for="fecha-ingreso">Fecha de ingreso</label>
+                            <input type="date" name="fecha-reserva-ingreso" id="check-in">
+                        </div>
+                        <div class="salida">
+                            <label for="fecha-salida">Fecha de salida</label>
+                            <input type="date" name="fecha-salida" id="check-out">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-reservar" id="cambio-color">Reservar</button>
+                        </div>
+                    </form>
+                    <form class="reservas-formulario" id="experience-booking-form">
+                        <div class="seleccion">
+                            <label for="nombre-experiencia">Elija su experiencia</label>
+                            <select name="nombre-experiencia" id="experience">
+                                    <option value="0"></option>
+                                    <option value="Laguna Esmeralda">Laguna Esmeralda</option>
+                                    <option value="Parque Nacional">Parque Nacional</option>
+                                    <option value="Canal Beagle">Canal Beagle</option>
+                            </select>
+                        </div>
+                        <div class="nombre">
+                            <label for="nombre-usuario">Nombre y apellido</label>
+                            <input type="text" name="nombre-usuario" id="exp-guest-name" placeholder="Ingrese su nombre y apellido">
+                        </div>
+                        <div class="email">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="exp-guest-email" placeholder="Ingrese su email">
+                        </div>
+                        <div class="telefono">
+                            <label for="telefono">Número de teléfono</label>
+                            <input type="tel" name="telefono" id="exp-guest-telephone" placeholder="Ingrese su número de teléfono">
+                        </div>
+                        <div class="adultos">
+                            <label for="adultos">Cantidad de adultos</label>
+                            <input type="number" name="adultos"  id="exp-adults" placeholder="0">
+                        </div>
+                        <div class="menores">
+                            <label for="menores">Cantidad de menores</label>
+                            <input type="number" name="menores" id="exp-children" placeholder="0">
+                        </div>
+                        <div class="fecha">
+                            <label for="fecha-experiencia">Fecha de reserva</label>
+                            <input type="date" name="fecha-experiencia" id="exp-date">
+                        </div>
+                        <div>
+                            <button type="submit" class="btn-reservar" id="cambio-color">Reservar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="../js/reservas.js"></script>
 </body>
+
 </html>
