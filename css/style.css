@@ -302,22 +302,6 @@ span{
     font-weight: bold;
 }
 
-.container-clima{
-    width: 100%;
-    background-color: #e7f6f2ce;
-    color: #171717;
-    border-radius: 20px;
-    padding: 20px;
-}
-
-h5 {
-    margin: 0 auto;
-    font-size: 2.2em;
-    text-align: center;
-    font-size: 5em;
-}
-
-
 /**--FIN RESERVAS--**/
 
 /**--INICIO CONTACTO--**/
@@ -340,7 +324,7 @@ h5 {
 }
 
 .contacto-caja {
-    background-color: #f0f1ab;
+    background-color: #d2d395;
     color: #171717;
     font-weight: bold;
     text-align: center;
@@ -370,7 +354,7 @@ h5 {
     font-size: 1em;
     font-weight: bold;
     color: #171717;
-    border: solid 2px #a7cbd9;
+    border: solid 2px #7ea6b6;
     background-color: #a7cbd9;
     border-radius: 30px;
     padding: 10px 20px 10px 20px;
@@ -382,7 +366,7 @@ h5 {
     font-size: 1em;
     font-weight: bold;
     color: #171717;
-    border: solid 2px #7e93be;
+    border: solid 2px #69799b;
     background-color: #7e93be;
     border-radius: 30px;
     padding: 10px 20px 10px 20px;
@@ -398,5 +382,68 @@ h5 {
 /**--INICIO FOOTER--**/
 
 footer{
+    width: 100%;
+    background: rgb(29,43,100);
+    background: linear-gradient(90deg, rgba(29,43,100,1) 0%, rgba(248,205,218,1) 100%);
     grid-area: footer;
+}
+
+footer div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.logo-footer a{
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2em;
+    color: aliceblue;
+    margin: 10px;
+}
+
+.container-contacto{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-contacto div{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-contacto img{
+    width: 40px;
+    height: 40px;
+}
+
+.container-contacto p{
+    color: black;
+    font-weight: bold;
+}
+
+.container-FAQ{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container-FAQ a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.container-FAQ a:hover{
+    text-decoration: underline;
 }

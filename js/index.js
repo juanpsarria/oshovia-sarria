@@ -1,26 +1,5 @@
 //FORMULARIO DE CONTACTO
 
-grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6Le4YQ8jAAAAAD8o4LSHN6SpiPmJXiuegnfyyQ4U', {action: 'submit'})
-    .then(() => {
-        submitButton.addEventListener("click", (_event) => {
-            Swal.fire({
-                html: '<div id="recaptcha"></div>',
-                didOpen: () => {
-                    grecaptcha.render('recaptcha', {
-                        'sitekey': '6Le4YQ8jAAAAAD8o4LSHN6SpiPmJXiuegnfyyQ4U'
-                    })
-                },
-                preConfirm: function () {
-                    if (grecaptcha.getResponse().length === 0) {
-                        Swal.showValidationMessage(`Verificación`)
-                    }
-                }
-            })
-        })
-    });
-});
-
 //VARIABLES GLOBALES
 
 const contactName = document.getElementById("from_name");

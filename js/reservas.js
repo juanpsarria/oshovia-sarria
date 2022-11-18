@@ -160,10 +160,22 @@ cottageBtn.addEventListener("click", (_Event) => {
             inputCheckIn.value = "";
             inputCheckOut.value = "";
 
-            console.log(cottageBookingInformation);
+            //SE USA PROMESA PARA OBTENER CADA RESERVA COMO UN OBJETO
+            const bookingData = new Promise ((resolve, reject) =>{
+                setTimeout(() => {
+                    return resolve(cottageBookingInformation)
+                }, 250)
+            })
+            .then((newList) =>{
+                newList.map( el =>{
+                    console.log(el);
+                });
+            });
         };
     });
 });
+
+
 
 
 //EVENTO DEL BOTÓN EXPERIENCIA - EXPERIENCE BUTTON EVENT
@@ -232,7 +244,7 @@ experienceBtn.addEventListener("click", (_Event) => {
         const children = inputExpChildren.value;
         const expDate = inputExpDate.value;
     
-        if (experience == "" || guestName == "" || guestTelephone == "" || guestEmail == "" || adults == "" || expDate == ""){
+        if (experience == "" || guestName == "" || guestTelephone == "" || guestEmail == "" || adults == "" || expDate == "" || adults < 0 || children < 0){
 
             //MENSAJE DE FALTA DE DATOS
             Swal.fire('Por favor, complete todos los campos.')
@@ -273,7 +285,17 @@ experienceBtn.addEventListener("click", (_Event) => {
             inputExpChildren.value = "";
             inputExpDate.value = "";
 
-            console.log(experienceBookingInformation);
+            //SE USA PROMESA PARA OBTENER CADA RESERVA COMO UN OBJETO
+            const bookingExpData = new Promise ((resolve, reject) =>{
+                setTimeout(() => {
+                    return resolve(experienceBookingInformation)
+                }, 250)
+            })
+            .then((newList) =>{
+                newList.map( el =>{
+                    console.log(el);
+                });
+            });
         };
     });
 });
